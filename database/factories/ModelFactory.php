@@ -19,3 +19,20 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->defineAs(App\Warehouse::class, 'active', function ($faker) {
+    return [
+
+        'werehouse_name'  => $faker->sentence(),
+        'country'   => $faker->text,
+        'active' => true,
+    ];
+});
+$factory->defineAs(App\Warehouse::class, 'inactive', function ($faker) {
+    return [
+        'werehouse_name'  => $faker->sentence(),
+        'country'   => $faker->text,
+        'active' => false,
+    ];
+});

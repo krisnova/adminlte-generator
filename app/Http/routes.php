@@ -32,3 +32,27 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+
+//Route::get('/warehouses', 'WarehouseController@index');
+
+Route::resource('warehouses', 'WarehouseController');
+
+Route::resource('datatables', 'DatatablesController');
+Route::get('datatables',['uses'=>'DatatablesController@getIndex', 'as' => 'datatables']);
+Route::get('datatables.data',['uses'=>'DatatablesController@anyData', 'as' => 'datatables.data']);
+//Route::get('datatables', 'DatatablesController@anyData');
+
+
+
+/*
+
+Route::controller('datatables', 'DatatablesController', [
+    'anyData'  => 'datatables.data',
+    'edit'  => 'datatables.edit',
+
+    'getIndex' => 'datatables',
+
+]);
+
+*/
