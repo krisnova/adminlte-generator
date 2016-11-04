@@ -39,7 +39,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('warehouses', 'WarehouseController');
 
 Route::resource('datatables', 'DatatablesController');
-Route::get('datatables',['uses'=>'DatatablesController@getIndex', 'as' => 'datatables']);
+//Route::get('datatables',['uses'=>'DatatablesController@getIndex', 'as' => 'datatables']);
 Route::get('datatables.data',['uses'=>'DatatablesController@anyData', 'as' => 'datatables.data']);
 //Route::get('datatables', 'DatatablesController@anyData');
 
@@ -56,3 +56,23 @@ Route::controller('datatables', 'DatatablesController', [
 ]);
 
 */
+
+//Route::resource('product', 'ProductController');
+//Route::resource('manufacturer', 'ManufacturerController');
+Route::resource('note', 'NoteController');
+Route::resource('office', 'OfficeController');
+Route::resource('observer', 'ObserverController');
+Route::resource('stock', 'StockController');
+Route::resource('user', 'UserController');
+Route::resource('alert', 'AlertController');
+Route::resource('channel', 'ChannelController');
+Route::resource('admin/feedbacks', 'Admin\\FeedbacksController');
+//Route::resource('warehouse/manufacturers', 'Warehouse\\ManufacturersController');
+Route::resource('warehouse/manufacturers', 'Warehouse\\ManufacturersController');
+Route::resource('warehouse/products', 'Warehouse\\ProductsController');
+Route::resource('warehouse/stocks', 'Warehouse\\StocksController');
+Route::resource('warehouse/offices', 'Warehouse\\OfficesController');
+Route::resource('warehouse/observers', 'Warehouse\\ObserversController');
+Route::resource('warehouse/notes', 'Warehouse\\NotesController');
+Route::resource('warehouse/channels', 'Warehouse\\ChannelsController');
+Route::resource('warehouse/alerts', 'Warehouse\\AlertsController');

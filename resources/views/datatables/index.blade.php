@@ -29,8 +29,8 @@
             {data: 'email', name: 'email'},
             {data: 'created_at', name: 'created_at'},
             {data: 'updated_at', name: 'updated_at'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-            {data: 'action2', name: 'action', orderable: false, searchable: false},
+            {data: 'action_edit', name: 'action', orderable: false, searchable: false},
+            {data: 'action_create', name: 'action', orderable: false, searchable: false},
         ]
     });
 </script>

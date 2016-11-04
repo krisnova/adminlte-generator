@@ -165,6 +165,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
+
     ],
 
     /*

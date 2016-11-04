@@ -6,6 +6,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    protected $table = 'users';
+    public $timestamps = true;
+
+    public function observers()
+    {
+        return $this->hasMany('Observer');
+    }
+
+    public function notes()
+    {
+        return $this->hasMany('Note');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

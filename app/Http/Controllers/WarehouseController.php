@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 /* Importatamos el modelo */
 use App\Warehouse as Warehouse;
-use Illuminate\Http\Request;
-
+//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests;
 
 
@@ -35,7 +36,8 @@ class WarehouseController extends Controller {
      */
     public function create()
     {
-return view('werehouses/create');
+        $warehouse = new warehouse;
+        return view('warehouses.create', ['warehouse' => $warehouse ]);
     }
 
     /**
@@ -45,7 +47,13 @@ return view('werehouses/create');
      */
     public function store()
     {
-        return 'Creating a Werehouse';
+        /*
+         * Ver datos
+         * return  Request::all();
+         * */
+        $data =  Request::all();
+        Warehouse::create($data);
+        return Redirect::to('warehouses');
     }
 
     /**
